@@ -1,6 +1,10 @@
 const degreesToRadians = (degrees) => degrees * (Math.PI / 180);
 
 const calculateDistance = (latDegrees1, lonDegrees1, latDegrees2, lonDegrees2) => {
+    if (!latDegrees1 || !lonDegrees1 || !latDegrees2 || !lonDegrees2) {
+        throw new Error('You are missing one or more arguments');
+    }
+
     const latitude1 = degreesToRadians(latDegrees1);
     const latitude2 = degreesToRadians(latDegrees2);
     const longitude1 = degreesToRadians(lonDegrees1);
@@ -17,9 +21,10 @@ const calculateDistance = (latDegrees1, lonDegrees1, latDegrees2, lonDegrees2) =
     const earthRadiusInKilometers = 6371;
 
     const distanceInKilometers = distance * earthRadiusInKilometers;
-    return distanceInKilometers.toFixed(2);
+    const formattedFloat = distanceInKilometers.toFixed(2);
+    return Number.parseInt(formattedFloat, 10);
 };
 
 export {
     calculateDistance,
-}
+};
