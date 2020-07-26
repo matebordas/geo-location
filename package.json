@@ -2,9 +2,9 @@
   "name": "geo-location",
   "version": "1.0.0",
   "description": "Application to determine the distance from a given geographical location",
-  "main": "src/index.js",
+  "main": "src/main.js",
   "scripts": {
-    "start": "nodemon --exec babel-node src/index.js ",
+    "start": "babel-node src/main.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint --ext .js .",
     "lint:fix": "eslint --fix --ext .js"
@@ -12,8 +12,7 @@
   "author": "Mate Balo Bordas",
   "license": "ISC",
   "dependencies": {
-    "@babel/polyfill": "^7.10.4",
-    "express": "^4.17.1"
+    "@babel/polyfill": "^7.10.4"
   },
   "devDependencies": {
     "@babel/cli": "^7.10.5",
@@ -23,7 +22,6 @@
     "babel-loader": "^8.1.0",
     "eslint": "^7.5.0",
     "eslint-config-airbnb-base": "^14.2.0",
-    "eslint-plugin-import": "^2.22.0",
-    "nodemon": "^2.0.4"
+    "eslint-plugin-import": "^2.22.0"
   }
 }

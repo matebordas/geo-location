@@ -11,6 +11,8 @@ module.exports = {
     },
     rules: {
         'comma-dangle': 0,
+        'arrow-body-style': 0,
+        'import/prefer-default-export': 0,
         semi: ['error', 'always'],
         indent: ['error', 4]
     }
