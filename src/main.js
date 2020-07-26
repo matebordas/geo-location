@@ -35,7 +35,7 @@ const onReadFileLine = (line) => {
 const onFileClose = () => {
     const sortByUserId = (customer1, customer2) => customer1.user_id - customer2.user_id;
     const sortedCustomers = customersWithin100km.sort(sortByUserId);
-    console.log('sortedCustomers', sortedCustomers);
+    sortedCustomers.forEach((customer) => console.log(customer));
 };
 
 readFileLines(filePath, onReadFileLine, onFileClose);
