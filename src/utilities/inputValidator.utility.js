@@ -1,13 +1,19 @@
-const validateFileInput = (filePath) => {
-    if (!filePath) {
+const validateFileInput = (fileInput) => {
+    if (!fileInput) {
         throw new Error('You must pass an input=[path] argument with the path');
     }
 
-    const filePathArguments = filePath.split('=');
+    const filePathArguments = fileInput.split('=');
     const argumentName = filePathArguments[0];
     const invalidFormatError = 'The input file format must be input=[path]';
 
+    console.log('filePathArguments', filePathArguments);
     if (filePathArguments.length !== 2) {
+        throw new Error(invalidFormatError);
+    }
+
+    const argumentValue = filePathArguments[1];
+    if (!argumentValue.length) {
         throw new Error(invalidFormatError);
     }
 
