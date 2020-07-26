@@ -8,12 +8,19 @@ const readFileLines = (filePath, onReadLine, onClose) => {
         crlfDelay: Infinity
     });
 
-    readLineInterface.on('line', (line) => {
-        onReadLine(line);
-    });
+    return new Promise((resolve, reject) => {
+        try {
+            readLineInterface.on('line', (line) => {
+                onReadLine(line);
+            });
 
-    readLineInterface.on('close', () => {
-        onClose();
+            readLineInterface.on('close', () => {
+                const result = onClose();
+                resolve(result);
+            });
+        } catch (error) {
+            reject(error);
+        }
     });
 };
 
