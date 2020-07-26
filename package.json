@@ -5,7 +5,7 @@
   "main": "src/main.js",
   "scripts": {
     "start": "babel-node src/main.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha --file ./test/setup.js src/**/*.spec.js --require @babel/register",
     "lint": "eslint --ext .js .",
     "lint:fix": "eslint --fix --ext .js"
   },
@@ -19,9 +19,12 @@
     "@babel/core": "^7.10.5",
     "@babel/node": "^7.10.5",
     "@babel/preset-env": "^7.10.4",
+    "@babel/register": "^7.10.5",
     "babel-loader": "^8.1.0",
+    "chai": "^4.2.0",
     "eslint": "^7.5.0",
     "eslint-config-airbnb-base": "^14.2.0",
-    "eslint-plugin-import": "^2.22.0"
+    "eslint-plugin-import": "^2.22.0",
+    "mocha": "^8.0.1"
   }
 }
