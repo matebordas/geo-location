@@ -7,7 +7,6 @@ const validateFileInput = (fileInput) => {
     const argumentName = filePathArguments[0];
     const invalidFormatError = 'The input file format must be input=[path]';
 
-    console.log('filePathArguments', filePathArguments);
     if (filePathArguments.length !== 2) {
         throw new Error(invalidFormatError);
     }

@@ -5,7 +5,7 @@ import { intercomCoordinates } from '../common/constants';
 const { expect } = require('chai');
 
 describe('calculateDistance', () => {
-    it('should return 41.76 as the distance for latitude: 52.986375 and longitude: -6.043701', () => {
+    it('should return 41 as the distance for latitude: 52.986375 and longitude: -6.043701', () => {
         const mockCustomer = { latitude: 52.986375, longitude: -6.043701 };
 
         const distance = calculateDistance(
